@@ -7,6 +7,6 @@
 <ul>
   <li *ngFor='let currentKeg of childKegList'>{{currentKeg.brand}} {{currentKeg.name}} {{currentKeg.price}}
     <button>Sell pint</button>
-    <button>Edit</button>
+    <button (click)="editButtonClicked(currentKeg)">Edit</button>
   </li>
   </ul>

@@ -16,4 +16,18 @@ export class AppComponent {
     new Keg('Mirror Pond Pale Ale', 'Deschutes', 5, 5.4),
     new Keg('Bad Timing', 'Cloudburst', 6.7, 7)
   ];
+
+  selectedKeg: Keg = null;
+  
+  editKeg(clickedKeg: Keg) {
+    this.selectedKeg = clickedKeg;
+  }
+
+  finishedEditing() {
+    this.selectedKeg = null;
+  }
+
+  addKeg(newKeg: Keg) {
+    this.masterKegList.push(newKeg);
+  }
 }

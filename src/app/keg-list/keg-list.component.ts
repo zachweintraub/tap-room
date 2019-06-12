@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import {Keg} from '../models/keg.model';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Keg } from '../models/keg.model';
 
 @Component({
   selector: 'app-keg-list',
@@ -8,6 +8,10 @@ import {Keg} from '../models/keg.model';
 })
 export class KegListComponent{
   @Input() childKegList: Keg[];
-  
+  @Output() clickSender = new EventEmitter();
+
+  editButtonClicked(keg: Keg) {
+    this.clickSender.emit(keg);
+  }
 
 }
