@@ -1,0 +1,12 @@
+<select (change)='onAlcoholChange($event.target.value)'>
+  <option value='allKegs'>All kegs</option>
+  <option value='Light'>Light</option>
+  <option value='Strong'>Strong</option>
+</select>
+
+<ul>
+  <li *ngFor='let currentKeg of childKegList'>{{currentKeg.brand}} {{currentKeg.name}} {{currentKeg.price}}
+    <button>Sell pint</button>
+    <button>Edit</button>
+  </li>
+  </ul>
