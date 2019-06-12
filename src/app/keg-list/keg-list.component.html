@@ -1,12 +1,11 @@
-<select (change)='onAlcoholChange($event.target.value)'>
+<select (change)='onPintsChange($event.target.value)'>
   <option value='allKegs'>All kegs</option>
-  <option value='Light'>Light</option>
-  <option value='Strong'>Strong</option>
+  <option value='Less than 10'>Less than 10</option>
 </select>
 
 <ul>
-  <li *ngFor='let currentKeg of childKegList'>{{currentKeg.brand}} {{currentKeg.name}} {{currentKeg.price}}
-    <button>Sell pint</button>
+  <li *ngFor='let currentKeg of childKegList | pints:filterByPintsLeft'>{{currentKeg.brand}} {{currentKeg.name}} ${{currentKeg.price}} {{currentKeg.alcoholContent}}% {{currentKeg.level}} pints remaining
+    <button (click)="currentKeg.sellPint()">Sell pint</button>
     <button (click)="editButtonClicked(currentKeg)">Edit</button>
   </li>
   </ul>

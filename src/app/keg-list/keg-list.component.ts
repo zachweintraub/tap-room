@@ -14,4 +14,10 @@ export class KegListComponent{
     this.clickSender.emit(keg);
   }
 
+  filterByPintsLeft: string = "allKegs"
+
+  onPintsChange(optionFromMenu){
+    this.filterByPintsLeft = optionFromMenu;
+  }
+
 }

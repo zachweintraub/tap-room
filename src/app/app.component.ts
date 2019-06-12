@@ -14,7 +14,7 @@ export class AppComponent {
   masterKegList: Keg[] = [
     new Keg('Beer', 'Olympia', 2.50, 4.78),
     new Keg('Mirror Pond Pale Ale', 'Deschutes', 5, 5.4),
-    new Keg('Bad Timing', 'Cloudburst', 6.7, 7)
+    new Keg('Bad Timing', 'Cloudburst', 7, 6.7)
   ];
 
   selectedKeg: Keg = null;
