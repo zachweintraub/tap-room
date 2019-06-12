@@ -9,6 +9,7 @@ import { Keg } from '../models/keg.model';
 export class KegListComponent{
   @Input() childKegList: Keg[];
   @Output() clickSender = new EventEmitter();
+  @Output() sellSender = new EventEmitter();
 
   editButtonClicked(keg: Keg) {
     this.clickSender.emit(keg);
@@ -18,6 +19,10 @@ export class KegListComponent{
 
   onPintsChange(optionFromMenu){
     this.filterByPintsLeft = optionFromMenu;
+  }
+
+  sellButtonClicked(keg:Keg) {
+    this.sellSender.emit(keg);
   }
 
 }

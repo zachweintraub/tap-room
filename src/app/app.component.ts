@@ -30,4 +30,10 @@ export class AppComponent {
   addKeg(newKeg: Keg) {
     this.masterKegList.push(newKeg);
   }
+
+  sellPint(keg: Keg) {
+    if (keg.level > 0) {
+        keg.level -= 1;
+    }
+}
 }

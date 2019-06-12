@@ -5,7 +5,7 @@
 
 <ul>
   <li *ngFor='let currentKeg of childKegList | pints:filterByPintsLeft'>{{currentKeg.brand}} {{currentKeg.name}} ${{currentKeg.price}} {{currentKeg.alcoholContent}}% {{currentKeg.level}} pints remaining
-    <button (click)="currentKeg.sellPint()">Sell pint</button>
+    <button (click)="sellButtonClicked(currentKeg)">Sell pint</button>
     <button (click)="editButtonClicked(currentKeg)">Edit</button>
   </li>
   </ul>

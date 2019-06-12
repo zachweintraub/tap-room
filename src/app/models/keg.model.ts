@@ -1,12 +1,6 @@
 import { AppComponent } from './../app.component';
 
 export class Keg {
-    public level: number = 12;
+    public level: number = 124;
     constructor(public name: string, public brand: string, public price: number, public alcoholContent: number) {}
-
-    sellPint() {
-        if(this.level > 0) {
-            this.level -= 1;
-        }
-    }
 }
