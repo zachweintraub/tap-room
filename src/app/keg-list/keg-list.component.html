@@ -1,10 +1,27 @@
 <select (change)='onPintsChange($event.target.value)'>
-  <option value='allKegs'>All kegs</option>
-  <option value='Less than 10'>Less than 10</option>
+  <option value='allKegs'>All Kegs</option>
+  <option value='Less than 10'>Replace Soon</option>
+</select>
+
+<select (change)='onPriceChange($event.target.value)'>
+  <option value='allKegs'>All Prices</option>
+  <option value='budget'>Budget</option>
+  <option value='premium'>Premium</option>
+</select>
+
+<select (change)='onAlcoholChange($event.target.value)'>
+  <option value='allKegs'>All Strengths</option>
+  <option value='weak'>Take It Easy</option>
+  <option value='strong'>Get Drunk</option>
+</select>
+
+<select (change)='onBrandChange($event.target.value)'>
+  <option value='allKegs'>All Breweries</option>
+  <option *ngFor='let currentKeg of childKegList' value="currentKeg.brand">{{currentKeg.brand}}</option>
 </select>
 
 <ul>
-  <li *ngFor='let currentKeg of childKegList | pints:filterByPintsLeft'>{{currentKeg.brand}} {{currentKeg.name}} ${{currentKeg.price}} {{currentKeg.alcoholContent}}% {{currentKeg.level}} pints remaining
+  <li *ngFor='let currentKeg of childKegList | pints:filterByPintsLeft | price:filterByPrice | strength:filterByStrength'>{{currentKeg.brand}} {{currentKeg.name}} ${{currentKeg.price}} {{currentKeg.alcoholContent}}% {{currentKeg.level}} pints remaining
     <button (click)="sellButtonClicked(currentKeg)">Sell pint</button>
     <button (click)="editButtonClicked(currentKeg)">Edit</button>
   </li>

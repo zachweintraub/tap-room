@@ -25,4 +25,16 @@ export class KegListComponent{
     this.sellSender.emit(keg);
   }
 
+  filterByPrice: string = "allKegs"
+
+  onPriceChange(optionFromMenu){
+    this.filterByPrice = optionFromMenu;
+  }
+
+  filterByStrength: string = "allKegs"
+
+  onAlcoholChange(optionFromMenu){
+    this.filterByStrength = optionFromMenu;
+  }
+
 }
