@@ -10,6 +10,11 @@ export class KegListComponent {
   @Input() childKegList: Keg[];
   @Output() clickSender = new EventEmitter();
   @Output() sellSender = new EventEmitter();
+  @Output() clickDelete = new EventEmitter();
+
+  deleteClicked(deleteKeg: Keg) {
+    this.clickDelete.emit(deleteKeg);
+  }
 
   editButtonClicked(keg: Keg) {
     this.clickSender.emit(keg);

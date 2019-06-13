@@ -1,3 +1,4 @@
-<app-keg-list [childKegList]='masterKegList' (clickSender)='editKeg($event)' (sellSender)='sellPint($event)'></app-keg-list>
+<h2>Welcome to the Tap Room</h2>
+<app-keg-list [childKegList]='masterKegList' (clickSender)='editKeg($event)' (clickDelete)="deleteKeg($event)" (sellSender)='sellPint($event)'></app-keg-list>
 <app-edit-keg [childSelectedKeg]='selectedKeg' (clickSender)='editKeg($event)'></app-edit-keg>
 <app-new-keg (sendKeg)='addKeg($event)'></app-new-keg>

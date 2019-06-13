@@ -23,6 +23,14 @@ export class AppComponent {
     this.selectedKeg = clickedKeg;
   }
 
+  deleteKeg(clickedKeg: Keg) {
+    for(let i = 0; i < this.masterKegList.length; i++) {
+      if(clickedKeg.name == this.masterKegList[i].name && clickedKeg.brand == this.masterKegList[i].brand) {
+        this.masterKegList.splice(i, 1);
+      }
+    }
+  }
+
   finishedEditing() {
     this.selectedKeg = null;
   }

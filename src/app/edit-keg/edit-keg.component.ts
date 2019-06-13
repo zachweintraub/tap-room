@@ -12,13 +12,13 @@ export class EditKegComponent {
 
   @Input() childSelectedKeg: Keg;
   @Output() clickSender = new EventEmitter();
+  @Output() clickDelete = new EventEmitter();
 
   saveButtonClicked() {
     this.clickSender.emit(null)
   }
 
-
-  // deleteKeg(selectedKeg: Keg) {
-    
-  // }
+  deleteClicked(deleteKeg: Keg) {
+    this.clickDelete.emit(deleteKeg);
+  }
 }
