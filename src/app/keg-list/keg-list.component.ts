@@ -6,7 +6,7 @@ import { Keg } from '../models/keg.model';
   templateUrl: './keg-list.component.html',
   styleUrls: ['./keg-list.component.css']
 })
-export class KegListComponent{
+export class KegListComponent {
   @Input() childKegList: Keg[];
   @Output() clickSender = new EventEmitter();
   @Output() sellSender = new EventEmitter();
@@ -15,9 +15,9 @@ export class KegListComponent{
     this.clickSender.emit(keg);
   }
 
-  filterByPintsLeft: string = "allKegs"
+  filterByPintsLeft: string = "allKegs";
 
-  onPintsChange(optionFromMenu){
+  onPintsChange(optionFromMenu) {
     this.filterByPintsLeft = optionFromMenu;
   }
 
@@ -25,16 +25,22 @@ export class KegListComponent{
     this.sellSender.emit(keg);
   }
 
-  filterByPrice: string = "allKegs"
+  filterByPrice: string = "allKegs";
 
-  onPriceChange(optionFromMenu){
+  onPriceChange(optionFromMenu) {
     this.filterByPrice = optionFromMenu;
   }
 
-  filterByStrength: string = "allKegs"
+  filterByStrength: string = "allKegs";
 
-  onAlcoholChange(optionFromMenu){
+  onAlcoholChange(optionFromMenu) {
     this.filterByStrength = optionFromMenu;
+  }
+
+  filterByBrewery: string = "allKegs";
+
+  onBreweryChange(optionFromMenu) {
+    this.filterByBrewery = optionFromMenu;
   }
 
 }

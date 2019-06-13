@@ -9,6 +9,7 @@ import { EditKegComponent } from './edit-keg/edit-keg.component';
 import { PintsPipe } from './pints.pipe';
 import { PricePipe } from './price.pipe';
 import { StrengthPipe } from './strength.pipe';
+import { BreweryPipe } from './brewery.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { StrengthPipe } from './strength.pipe';
     EditKegComponent,
     PintsPipe,
     PricePipe,
-    StrengthPipe
+    StrengthPipe,
+    BreweryPipe
   ],
   imports: [
     BrowserModule,

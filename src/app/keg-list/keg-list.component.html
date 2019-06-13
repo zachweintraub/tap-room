@@ -15,13 +15,13 @@
   <option value='strong'>Get Drunk</option>
 </select>
 
-<select (change)='onBrandChange($event.target.value)'>
+<select (change)='onBreweryChange($event.target.value)'>
   <option value='allKegs'>All Breweries</option>
-  <option *ngFor='let currentKeg of childKegList' value="currentKeg.brand">{{currentKeg.brand}}</option>
+  <option *ngFor='let currentKeg of childKegList' value={{currentKeg.brand}}>{{currentKeg.brand}}</option>
 </select>
 
 <ul>
-  <li *ngFor='let currentKeg of childKegList | pints:filterByPintsLeft | price:filterByPrice | strength:filterByStrength'>{{currentKeg.brand}} {{currentKeg.name}} ${{currentKeg.price}} {{currentKeg.alcoholContent}}% {{currentKeg.level}} pints remaining
+  <li *ngFor='let currentKeg of childKegList | pints:filterByPintsLeft | price:filterByPrice | strength:filterByStrength | brewery:filterByBrewery'>{{currentKeg.brand}} {{currentKeg.name}} ${{currentKeg.price}} {{currentKeg.alcoholContent}}% {{currentKeg.level}} pints remaining
     <button (click)="sellButtonClicked(currentKeg)">Sell pint</button>
     <button (click)="editButtonClicked(currentKeg)">Edit</button>
   </li>
